@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- root -->
+<!ELEMENT lichttechnik (leds,lasers,halogene)>
+
+<!-- child -->
+<!ELEMENT leds (movinglights*, bars*, spots*)>
+<!ELEMENT lasers (projector*, showlaser*)>
+<!ELEMENT halogene (konventionel*, followspot*)>
+
+<!-- child child -->
+<!ELEMENT movinglights (hersteller, name, lichtleistung, bewegung, abstrahlwinkel, effekte, lebenserwartung, leistungsaufnahme, kanäle, gewicht, lichtquelle)>
+<!ELEMENT bars (hersteller, name, lichtleistung, bewegung, abstrahlwinkel, lebenserwartung, leistungsaufnahme, kanäle, gewicht, lichtquelle)>
+<!ELEMENT spots (hersteller, name, lichtleistung, abstrahlwinkel, effekte, lebenserwartung, leistungsaufnahme, kanäle, gewicht, lichtquelle)>
+
+<!ELEMENT projector (hersteller, name, lichtleistung, lebenserwartung, leistungsaufnahme, gewicht, lichtquelle, auflösung)>
+<!ELEMENT showlaser (hersteller, name, lichtleistung, bewegung, abstrahlwinkel, effekte, lebenserwartung, leistungsaufnahme, kanäle, gewicht, lichtquelle)>
+
+<!ELEMENT konventionel (hersteller, name, lichtleistung, abstrahlwinkel, lebenserwartung, leistungsaufnahme, kanäle, gewicht, lichtquelle)>
+<!ELEMENT followspot (hersteller, name, lichtleistung, bewegung, abstrahlwinkel, lebenserwartung, leistungsaufnahme, gewicht, lichtquelle)>
+
+<!-- elements -->
+<!ELEMENT hersteller (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT lichtleistung (#PCDATA)>
+<!ELEMENT bewegung (tilt*, pan*)>
+<!ELEMENT abstrahlwinkel (von, bis*)>
+<!ELEMENT effekte (#PCDATA)>
+<!ELEMENT lebenserwartung (#PCDATA)>
+<!ELEMENT leistungsaufnahme (#PCDATA)>
+<!ELEMENT kanäle (#PCDATA)>
+<!ELEMENT gewicht (#PCDATA)>
+<!ELEMENT lichtquelle (menge, produkt)>
+<!ELEMENT auflösung (#PCDATA)>
+
+<!-- child elemnts -->
+<!ELEMENT tilt (#PCDATA)>
+<!ELEMENT pan (#PCDATA)>
+<!ELEMENT von (#PCDATA)>
+<!ELEMENT bis (#PCDATA)>
+<!ELEMENT menge (#PCDATA)>
+<!ELEMENT produkt (#PCDATA)>
+
+<!-- -->
+<!ATTLIST lichtleistung einheit CDATA #REQUIRED>
+<!ATTLIST lebenserwartung einheit CDATA #REQUIRED>
+<!ATTLIST leistungsaufnahme einheit CDATA #REQUIRED>
+<!ATTLIST gewicht einheit CDATA #REQUIRED>

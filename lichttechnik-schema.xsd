@@ -1,0 +1,205 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="lichttechnik" type="lichttechnikType">
+    </xs:element>
+    <!--root with child-->
+    <xs:complexType name="lichttechnikType">
+        <xs:sequence>
+            <xs:element name="leds">
+                <xs:complexType>
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:element type="movinglightsType" name="movinglights"/>
+                        <xs:element type="barsType" name="bars"/>
+                        <xs:element type="spotsType" name="spots"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="lasers">
+                <xs:complexType>
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:element type="projectorType" name="projector" minOccurs="0">
+                        </xs:element>
+                        <xs:element type="showlaserType" name="showlaser" minOccurs="0">
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="halogene">
+                <xs:complexType >
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:element type="konventionelType" name="konventionel">
+                        </xs:element>
+                        <xs:element type="followspotType" name="followspot">
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!--grandchilds-->
+    <xs:complexType name="movinglightsType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="bewegungType" name="bewegung"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="xs:integer" name="effekte"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="xs:integer" name="kanäle"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="barsType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="bewegungType" name="bewegung"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="xs:byte" name="kanäle"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="spotsType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="xs:string" name="effekte"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="xs:byte" name="kanäle"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="projectorType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+            <xs:element type="xs:string" name="auflösung"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="showlaserType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="bewegungType" name="bewegung"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="xs:string" name="effekte"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="xs:byte" name="kanäle"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="konventionelType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="xs:byte" name="kanäle"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="followspotType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="hersteller"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="lichtleistungType" name="lichtleistung"/>
+            <xs:element type="bewegungType" name="bewegung" minOccurs="0"/>
+            <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
+            <xs:element type="gewichtType" name="gewicht"/>
+            <xs:element type="lichtquelleType" name="lichtquelle"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--grandgrandchilds-->
+    <xs:complexType name="bewegungType">
+        <xs:sequence>
+            <xs:element type="xs:decimal" name="tilt" minOccurs="0"/>
+            <xs:element type="xs:decimal" name="pan" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="abstrahlwinkelType">
+        <xs:sequence>
+            <xs:element type="VonBisType" name="von">
+            </xs:element>
+            <xs:element type="VonBisType" name="bis" minOccurs="0">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lichtquelleType">
+        <xs:sequence>
+            <xs:element type="xs:byte" name="menge"/>
+            <xs:element type="xs:string" name="produkt"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--attribiutes-->
+    <xs:complexType name="lebenserwartungType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="einheit" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="leistungsaufnahmeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:short">
+                <xs:attribute type="xs:string" name="einheit" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="gewichtType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="einheit" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="lichtleistungType">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute type="lichtmessungType" name="einheit" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!--extending types-->
+    <xs:simpleType name="VonBisType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="720"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="lichtmessungType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="lumen"/>
+            <xs:pattern value="ansi lumen"/>
+            <xs:pattern value="lm"/>
+            <xs:pattern value="candela"/>
+            <xs:pattern value="cd"/>
+            <xs:pattern value="Lux"/>
+            <xs:pattern value="lx"/>
+            <xs:pattern value="mW @ 450nm"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

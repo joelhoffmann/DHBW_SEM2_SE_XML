@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="lichttechnik.xsl" type="text/xsl"?>
+<!--<DOCTYPE lichttechnik SYSTEM "./lichttechnik.dtd">-->
+<lichttechnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./lichttechnik-schema.xsd">
+    <!--Alle LED betreibene Lampen-->
+    <leds>
+        <!--Movinglights-->
+        <movinglights>
+            <hersteller>ROBE</hersteller>
+            <name>Pointe</name>
+            <lichtleistung einheit="lumen">9870</lichtleistung>
+            <bewegung>
+                <tilt>270</tilt>
+                <pan>540</pan>
+            </bewegung>
+            <abstrahlwinkel>
+                <von>2.5</von>
+                <bis>20</bis>
+            </abstrahlwinkel>
+            <effekte>19</effekte>
+            <lebenserwartung einheit="h">2500</lebenserwartung>
+            <leistungsaufnahme einheit="W">470</leistungsaufnahme>
+            <kanäle>30</kanäle>
+            <gewicht einheit="kg">15</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Osram Sirius HRI 280 W RO (Leuchtmittel)</produkt>
+            </lichtquelle>
+        </movinglights>
+        <!--LED Bar-->
+        <bars>
+            <hersteller>GLP</hersteller>
+            <name>Impression X4</name>
+            <lichtleistung einheit="lumen">1.920</lichtleistung>
+            <bewegung> 
+                <tilt>210</tilt>
+            </bewegung>
+            <abstrahlwinkel>
+                <von>7</von>
+                <bis>50</bis>
+            </abstrahlwinkel>
+            <lebenserwartung einheit="h">50000</lebenserwartung>
+            <leistungsaufnahme einheit="W">400</leistungsaufnahme>
+            <kanäle>20</kanäle>
+            <gewicht einheit="kg">16</gewicht>
+            <lichtquelle>
+                <menge>20</menge>
+                <produkt>LED</produkt>
+            </lichtquelle>
+        </bars>
+        <!--LED Spots-->
+        <spots>
+            <hersteller>Expolite</hersteller>
+            <name>Tour LED 50</name>
+            <lichtleistung einheit="lumen">1.500</lichtleistung>
+            <abstrahlwinkel>
+                <von>16</von>
+            </abstrahlwinkel>
+            <effekte>ja</effekte>
+            <lebenserwartung einheit="h">50000</lebenserwartung>
+            <leistungsaufnahme einheit="W">70</leistungsaufnahme>
+            <kanäle>15</kanäle>
+            <gewicht einheit="kg">4,8</gewicht>
+            <lichtquelle>
+                <menge>14</menge>
+                <produkt>LED</produkt>
+            </lichtquelle>
+        </spots>
+    </leds>
+    <!--Alle Laser-betreibene Geräte-->
+    <lasers>
+        <!--Projektoren-->
+        <projector>
+            <hersteller>BenQ</hersteller>
+            <name>LK990</name>
+            <lichtleistung einheit="ansi lumen">6000</lichtleistung>
+            <lebenserwartung einheit="h">20000</lebenserwartung>
+            <leistungsaufnahme einheit="W">655</leistungsaufnahme>
+            <gewicht einheit="kg">20,2</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Laser</produkt>
+            </lichtquelle>
+            <auflösung>4k</auflösung>
+        </projector>
+        <!--Showlaser-->
+        <showlaser>
+            <hersteller>Carres Effects</hersteller>
+            <name>IVL</name>
+            <lichtleistung einheit="mW @ 450nm">5600</lichtleistung>
+            <bewegung>
+                <tilt>35</tilt>
+            </bewegung>
+            <abstrahlwinkel>
+                <von>1</von>
+                <bis>80</bis>
+            </abstrahlwinkel>
+            <effekte>ja</effekte>
+            <lebenserwartung einheit="">nicht angegeben</lebenserwartung>
+            <leistungsaufnahme einheit="W">125</leistungsaufnahme>
+            <kanäle>25</kanäle>
+            <gewicht einheit="kg">16</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Laser</produkt>
+            </lichtquelle>
+        </showlaser>
+    </lasers>
+    <!--Alle Halogene-->
+    <halogene>
+        <!--konventionel-->
+        <konventionel>
+            <hersteller>Tibo</hersteller>
+            <name>Frosnel 525</name>
+            <lichtleistung einheit="lumen">23300</lichtleistung>
+            <abstrahlwinkel>
+                <von>85</von>
+                <bis>85</bis>
+            </abstrahlwinkel>
+            <lebenserwartung einheit="h">8000</lebenserwartung>
+            <leistungsaufnahme einheit="W">250</leistungsaufnahme>
+            <kanäle>2</kanäle>
+            <gewicht einheit="kg">7,4</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Discharge</produkt>
+            </lichtquelle>
+        </konventionel>
+        <!--Follow Spot-->
+        <followspot>
+            <hersteller>ROBERT JULIAT</hersteller>
+            <name>Aramis</name>
+            <lichtleistung einheit="lumen">240000</lichtleistung>
+            <abstrahlwinkel>
+                <von>4.5</von>
+                <bis>8</bis>
+            </abstrahlwinkel>
+            <lebenserwartung einheit="h">500</lebenserwartung>
+            <leistungsaufnahme einheit="W">2500</leistungsaufnahme>
+            <gewicht einheit="kg">59</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>HMI 2500 W/S XS</produkt>
+            </lichtquelle>
+        </followspot>
+    </halogene>
+</lichttechnik>
