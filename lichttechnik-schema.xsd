@@ -178,7 +178,7 @@
     </xs:complexType>
     <xs:complexType name="lichtleistungType">
         <xs:simpleContent>
-            <xs:extension base="xs:float">
+            <xs:extension base="xs:double">
                 <xs:attribute type="lichtmessungType" name="einheit" use="optional"/>
             </xs:extension>
         </xs:simpleContent>
