@@ -5,16 +5,16 @@
     <!--root with child-->
     <xs:complexType name="lichttechnikType">
         <xs:sequence>
-            <xs:element name="leds">
+            <xs:element name="leds" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                        <xs:element type="movinglightsType" name="movinglights"/>
-                        <xs:element type="barsType" name="bars"/>
-                        <xs:element type="spotsType" name="spots"/>
+                        <xs:element type="movinglightsType" name="movinglights" minOccurs="0"/>
+                        <xs:element type="barsType" name="bars" minOccurs="0"/>
+                        <xs:element type="spotsType" name="spots" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="lasers">
+            <xs:element name="lasers" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
                         <xs:element type="projectorType" name="projector" minOccurs="0">
@@ -24,12 +24,12 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="halogene">
+            <xs:element name="halogene" minOccurs="0">
                 <xs:complexType >
                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                        <xs:element type="konventionelType" name="konventionel">
+                        <xs:element type="konventionelType" name="konventionel" minOccurs="0">
                         </xs:element>
-                        <xs:element type="followspotType" name="followspot">
+                        <xs:element type="followspotType" name="followspot" minOccurs="0">
                         </xs:element>
                     </xs:sequence>
                 </xs:complexType>
@@ -45,7 +45,7 @@
             <xs:element type="bewegungType" name="bewegung"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
             <xs:element type="xs:integer" name="effekte"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="xs:integer" name="kanäle"/>
             <xs:element type="gewichtType" name="gewicht"/>
@@ -59,7 +59,7 @@
             <xs:element type="lichtleistungType" name="lichtleistung"/>
             <xs:element type="bewegungType" name="bewegung"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="xs:byte" name="kanäle"/>
             <xs:element type="gewichtType" name="gewicht"/>
@@ -73,7 +73,7 @@
             <xs:element type="lichtleistungType" name="lichtleistung"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
             <xs:element type="xs:string" name="effekte"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="xs:byte" name="kanäle"/>
             <xs:element type="gewichtType" name="gewicht"/>
@@ -85,7 +85,7 @@
             <xs:element type="xs:string" name="hersteller"/>
             <xs:element type="xs:string" name="name"/>
             <xs:element type="lichtleistungType" name="lichtleistung"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="gewichtType" name="gewicht"/>
             <xs:element type="lichtquelleType" name="lichtquelle"/>
@@ -100,7 +100,7 @@
             <xs:element type="bewegungType" name="bewegung"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
             <xs:element type="xs:string" name="effekte"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="xs:byte" name="kanäle"/>
             <xs:element type="gewichtType" name="gewicht"/>
@@ -113,7 +113,7 @@
             <xs:element type="xs:string" name="name"/>
             <xs:element type="lichtleistungType" name="lichtleistung"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="xs:byte" name="kanäle"/>
             <xs:element type="gewichtType" name="gewicht"/>
@@ -127,7 +127,7 @@
             <xs:element type="lichtleistungType" name="lichtleistung"/>
             <xs:element type="bewegungType" name="bewegung" minOccurs="0"/>
             <xs:element type="abstrahlwinkelType" name="abstrahlwinkel"/>
-            <xs:element type="lebenserwartungType" name="lebenserwartung"/>
+            <xs:element type="lebenserwartungType" name="lebenserwartung" minOccurs="0"/>
             <xs:element type="leistungsaufnahmeType" name="leistungsaufnahme"/>
             <xs:element type="gewichtType" name="gewicht"/>
             <xs:element type="lichtquelleType" name="lichtquelle"/>
@@ -157,8 +157,8 @@
     <!--attribiutes-->
     <xs:complexType name="lebenserwartungType">
         <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute type="xs:string" name="einheit" use="optional"/>
+            <xs:extension base="xs:integer">
+                <xs:attribute type="zeitType" name="einheit" use="optional"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -171,7 +171,7 @@
     </xs:complexType>
     <xs:complexType name="gewichtType">
         <xs:simpleContent>
-            <xs:extension base="xs:string">
+            <xs:extension base="xs:decimal">
                 <xs:attribute type="xs:string" name="einheit" use="optional"/>
             </xs:extension>
         </xs:simpleContent>
@@ -200,6 +200,15 @@
             <xs:pattern value="Lux"/>
             <xs:pattern value="lx"/>
             <xs:pattern value="mW @ 450nm"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="zeitType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="h"/>
+            <xs:pattern value="hours"/>
+            <xs:pattern value="stunden"/>
+            <xs:pattern value="years"/>
+            <xs:pattern value="y"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

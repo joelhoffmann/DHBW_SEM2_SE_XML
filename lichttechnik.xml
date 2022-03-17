@@ -32,7 +32,7 @@
             <hersteller>GLP</hersteller>
             <name>Impression X4</name>
             <lichtleistung einheit="lumen">1.920</lichtleistung>
-            <bewegung> 
+            <bewegung>
                 <tilt>210</tilt>
             </bewegung>
             <abstrahlwinkel>
@@ -60,7 +60,7 @@
             <lebenserwartung einheit="h">50000</lebenserwartung>
             <leistungsaufnahme einheit="W">70</leistungsaufnahme>
             <kanäle>15</kanäle>
-            <gewicht einheit="kg">4,8</gewicht>
+            <gewicht einheit="kg">4.8</gewicht>
             <lichtquelle>
                 <menge>14</menge>
                 <produkt>LED</produkt>
@@ -76,7 +76,7 @@
             <lichtleistung einheit="ansi lumen">6000</lichtleistung>
             <lebenserwartung einheit="h">20000</lebenserwartung>
             <leistungsaufnahme einheit="W">655</leistungsaufnahme>
-            <gewicht einheit="kg">20,2</gewicht>
+            <gewicht einheit="kg">20.2</gewicht>
             <lichtquelle>
                 <menge>1</menge>
                 <produkt>Laser</produkt>
@@ -96,7 +96,6 @@
                 <bis>80</bis>
             </abstrahlwinkel>
             <effekte>ja</effekte>
-            <lebenserwartung einheit="">nicht angegeben</lebenserwartung>
             <leistungsaufnahme einheit="W">125</leistungsaufnahme>
             <kanäle>25</kanäle>
             <gewicht einheit="kg">16</gewicht>
@@ -120,7 +119,7 @@
             <lebenserwartung einheit="h">8000</lebenserwartung>
             <leistungsaufnahme einheit="W">250</leistungsaufnahme>
             <kanäle>2</kanäle>
-            <gewicht einheit="kg">7,4</gewicht>
+            <gewicht einheit="kg">7.4</gewicht>
             <lichtquelle>
                 <menge>1</menge>
                 <produkt>Discharge</produkt>

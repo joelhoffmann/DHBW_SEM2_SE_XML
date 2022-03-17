@@ -11,22 +11,57 @@
                 <p>Diese Tabelle könnte einem Lager für Veranstaltungstechnik helfen, ihren Lagerbestand bezüglich Lichttechnik einzusehen, um so Events o.ä. zu planen.</p>
                 <p>Dabei kann auf den ersten blick ein grober Überblick über den Stromverbrauch der verscheidenen Geräte erkannt werden</p>
                 <p>Des Weiteren kann erkannt werden, ob es noch lücken im Datensatz gibt (gekenntzeichnet durch rote Schrift).</p>
+                <p>Der Produktname ist mit einer Farbe umrahmt, um seine Lichtquelle darzustellen. Dabei wird unterscheiden zwischen LED (grün), LASER (blau), HALOGENE (orange)</p>
                 <table border="1 solid" cellpadding="5">
-                        <tr style="font-weight: bold; text-align:center" bgcolor="#8d9cd6">
-                            <th>Hersteller</th>
-                            <th>Name</th>
-                            <th>Lichtleistung</th>
-                            <th>Bewegung</th>
-                            <th>Abstrahlwinkel</th>
-                            <th>Lebenserwartung</th>
-                            <th>Leistungsaufnahme</th>
-                            <th>Gewicht</th>
-                        </tr>
+                    <tr style="font-weight: bold; text-align:center" bgcolor="#8d9cd6">
+                        <th>Hersteller</th>
+                        <th>Produktname</th>
+                        <th>Lichtleistung</th>
+                        <th>Bewegung</th>
+                        <th>Abstrahlwinkel</th>
+                        <th>Lebenserwartung</th>
+                        <th>Leistungsaufnahme</th>
+                        <th>Gewicht</th>
+                    </tr>
                     <xsl:for-each select="*/*">
                         <tr >
-                            <td style="width: 12.5% ;">
-                                <xsl:value-of select="hersteller" />
-                            </td>
+                            <xsl:choose>
+                                <xsl:when test="name() = 'movinglights'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #12782a;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'bars'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #12782a;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'spots'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #12782a;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'projector'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #8591ff;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'showlaser'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #8591ff;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'konventionel'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #ffa385;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:when test="name() = 'followspot'">
+                                    <td style="width: 12.5%; border: 3px solid ;border-color: #ffa385;">
+                                        <xsl:value-of select="hersteller" />
+                                    </td>
+                                </xsl:when>
+                            </xsl:choose>
                             <td style="width: 12.5% ;">
                                 <xsl:value-of select="name" />
                             </td>
@@ -63,35 +98,46 @@
                                         bis
                                     <xsl:value-of select="abstrahlwinkel/bis" />
                                 </xsl:if>
+                                <xsl:if test="not(abstrahlwinkel/von)">
+                                    <tr style="color: red;">
+                                        nicht vorhanden
+                                    </tr>
+                                </xsl:if>
                             </td>
                             <td style="width: 12.5% ;">
-                                <xsl:value-of select="lebenserwartung" />
-                                &#160; 
-                                <xsl:value-of select="lebenserwartung/@einheit" />
+                                <xsl:if test ="not(lebenserwartung)">
+                                    <tr style="color: red;">
+                                        nicht vorhanden
+                                    </tr>
+                                </xsl:if>
+                                <xsl:if test = "lebenserwartung">
+                                    <xsl:value-of select="lebenserwartung" />
+                                    &#160; 
+                                    <xsl:value-of select="lebenserwartung/@einheit" />
+                                </xsl:if>
                             </td>
                             <xsl:choose>
-                                <xsl:when test="leistungsaufnahme &lt;= 150">
+                                <xsl:when test="leistungsaufnahme &lt;= 400">
                                     <td bgcolor="#b2ff94" style="text-align:center; width: 12.5% ;">
                                         <xsl:value-of select="leistungsaufnahme" />
                                         &#160; 
                                         <xsl:value-of select="leistungsaufnahme/@einheit" />
                                     </td>
                                 </xsl:when>
-                                <xsl:when test="leistungsaufnahme &lt;= 500">
+                                <xsl:when test="leistungsaufnahme &lt;= 1000">
                                     <td bgcolor="#ffcf75" style="text-align:center; width: 12.5% ;">
                                         <xsl:value-of select="leistungsaufnahme" />
                                         &#160; 
                                         <xsl:value-of select="leistungsaufnahme/@einheit" />
                                     </td>
                                 </xsl:when>
-                                <xsl:when test="leistungsaufnahme &gt;= 500">
+                                <xsl:when test="leistungsaufnahme &gt;= 1000">
                                     <td bgcolor="#e36868" style="text-align:center; width: 12.5% ;">
                                         <xsl:value-of select="leistungsaufnahme" />
                                         &#160; 
                                         <xsl:value-of select="leistungsaufnahme/@einheit" />
                                     </td>
                                 </xsl:when>
-
                             </xsl:choose>
                             <td style="width: 12.5% ;">
                                 <xsl:value-of select="gewicht" />

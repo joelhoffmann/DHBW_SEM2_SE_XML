@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="lichttechnik.xsl" type="text/xsl"?>
+<!--<DOCTYPE lichttechnik SYSTEM "./lichttechnik.dtd">-->
+<lichttechnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./lichttechnik-schema.xsd">
+    <!--Alle LED betreibene Lampen-->
+    <leds>
+        <!--Movinglights-->
+        <movinglights>
+            <hersteller>ROBE</hersteller>
+            <name>Pointe</name>
+            <lichtleistung einheit="lumen">9870</lichtleistung>
+            <bewegung>
+                <tilt>270</tilt>
+                <pan>540</pan>
+            </bewegung>
+            <abstrahlwinkel>
+                <von>2.5</von>
+                <bis>20</bis>
+            </abstrahlwinkel>
+            <effekte>19</effekte>
+            <lebenserwartung einheit="h">2500</lebenserwartung>
+            <leistungsaufnahme einheit="W">470</leistungsaufnahme>
+            <kanäle>30</kanäle>
+            <gewicht einheit="kg">15</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Osram Sirius HRI 280 W RO (Leuchtmittel)</produkt>
+            </lichtquelle>
+        </movinglights>
+        <movinglights>
+            <hersteller>ROBE</hersteller>
+            <name>Pointe</name>
+            <lichtleistung einheit="kg">9870</lichtleistung>
+            <bewegung>
+                <tilt>270</tilt>
+                <pan>540</pan>
+            </bewegung>
+            <abstrahlwinkel>
+                <von>-2.5</von>
+                <bis>20</bis>
+            </abstrahlwinkel>
+            <effekte>19</effekte>
+            <lebenserwartung einheit="h">2500</lebenserwartung>
+            <leistungsaufnahme einheit="W">470</leistungsaufnahme>
+            <kanäle>30</kanäle>
+            <gewicht einheit="kg">15</gewicht>
+            <lichtquelle>
+                <menge>1</menge>
+                <produkt>Osram Sirius HRI 280 W RO (Leuchtmittel)</produkt>
+            </lichtquelle>
+        </movinglights>
+    </leds>
+</lichttechnik>
