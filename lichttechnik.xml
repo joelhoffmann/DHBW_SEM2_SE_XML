@@ -24,7 +24,7 @@
             <gewicht einheit="kg">15</gewicht>
             <lichtquelle>
                 <menge>1</menge>
-                <produkt>Osram Sirius HRI 280 W RO (Leuchtmittel)</produkt>
+                <produkt>Osram Sirius HRI 280 W RO</produkt>
             </lichtquelle>
         </movinglights>
         <!--LED Bar-->
@@ -110,7 +110,7 @@
         <!--konventionel-->
         <konventionel>
             <hersteller>Tibo</hersteller>
-            <name>Frosnel 525</name>
+            <name>Fresnel 525</name>
             <lichtleistung einheit="lumen">23300</lichtleistung>
             <abstrahlwinkel>
                 <von>85</von>
@@ -122,7 +122,7 @@
             <gewicht einheit="kg">7.4</gewicht>
             <lichtquelle>
                 <menge>1</menge>
-                <produkt>Discharge</produkt>
+                <produkt>CDM-Leuchtmittel</produkt>
             </lichtquelle>
         </konventionel>
         <!--Follow Spot-->
